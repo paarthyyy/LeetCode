@@ -1,3 +1,11 @@
 class Solution:
     def toLowerCase(self, s: str) -> str:
-        return s.lower()
+        result = []
+        for char in s:
+            # Check if the character is an uppercase letter
+            if 65 <= ord(char) <= 90:
+                # Convert to lowercase by adding 32 to its ASCII value
+                result.append(chr(ord(char) + 32))
+            else:
+                result.append(char)
+        return "".join(result)
